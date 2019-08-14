@@ -6,9 +6,18 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2'
   },
-  watch:true,
+  watch: true,
   module: {
     rules: [
+      {
+        test: /\.(png|svg|eot|otf|ttf|woff|woff2)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 100000
+          }
+        }
+      },
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
@@ -16,17 +25,25 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
+            presets: [
+              'env'
+            ],
+            plugins: [
+              'transform-class-properties'
+            ]
           }
         }
       },
       {
-        test:/\.css$/,
-        use:['style-loader','css-loader']
-    }
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
     ]
   },
   externals: {
-    'react': 'commonjs react' 
+    react: 'commonjs react'
   }
 };

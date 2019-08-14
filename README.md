@@ -1,47 +1,39 @@
-# textbox-placeholder
+# anka-slider
 
-![npm (scoped)](https://img.shields.io/badge/version-1.1.0-blue.svg)
-![npm (scoped)](https://img.shields.io/github/license/aslihanozfidan/textbox-placeholder.svg)
+![npm (scoped)](https://img.shields.io/badge/version-1.2.0-blue.svg)
+![npm (scoped)](https://img.shields.io/github/license/aslihanozfidan/anka-slider.svg)
 
-Textbox component with placeholder to value for React
-
-![image](https://user-images.githubusercontent.com/18716752/51321043-c843ef00-1a72-11e9-8abc-233d82bbbb90.png)<br/>
-![image](https://user-images.githubusercontent.com/18716752/51427923-7d5ede80-1c0e-11e9-8dd0-8bc278f03fef.png)
+An efficient slider component.
 
 ## Why should I use it?
 
-Use it and placeholder be your default value for your textbox! Also now you can use it for textarea.
+It has a iterator algorithm and only shows active slide for your performance.
 
 ## Install
 
 ```
-$ npm install textbox-placeholder
+$ npm install anka-slider
 ```
 
 ## Usage
 
-**for Textbox**
-
 ```javascript
-import TextBoxPlaceholder from 'textbox-placeholder'
+import AnkaSlider from 'anka-slider'
 
-<TextBoxPlaceholder
-    component="TextBox"
-    name="text-box"
-    inputClass={className}
-    value={value}
-    placeholder={placeholder} />
-```
+const items = [
+      {
+        url:
+          'https://images.unsplash.com/photo-1561775330-4d22fde8aeed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80',
+        alt: 'Image1'
+      }
+    ];
 
-**for Textarea**
+const settings = {
+      animation: true,
+      arrows: true
+    }
 
-```javascript
-import TextareaPlaceholder from 'textbox-placeholder'
-
-<TextareaPlaceholder
-    component="Textarea"
-    name="textarea"
-    inputClass={className}
-    value={value}
-    placeholder={placeholder} />
+<AnkaSlider
+    items={items} 
+    settings={settings} />
 ```
