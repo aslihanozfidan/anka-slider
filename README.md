@@ -1,6 +1,6 @@
 # anka-slider
 
-![npm (scoped)](https://img.shields.io/badge/version-1.2.1-blue.svg)
+![npm (scoped)](https://img.shields.io/badge/version-1.2.2-blue.svg)
 ![npm (scoped)](https://img.shields.io/github/license/aslihanozfidan/anka-slider.svg)
 
 An efficient slider component.
