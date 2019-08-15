@@ -1,5 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import SliderContainer from './Slider/Container';
 
-ReactDOM.render(<SliderContainer />, document.getElementById('root'));
+export default class AnkaSlider extends React.Component {
+  render() {
+    return <SliderContainer />;
+  }
+}
