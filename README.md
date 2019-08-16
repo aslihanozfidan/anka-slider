@@ -1,9 +1,11 @@
 # anka-slider
 
-![npm (scoped)](https://img.shields.io/badge/version-1.3.2-blue.svg)
+![npm (scoped)](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![npm (scoped)](https://img.shields.io/github/license/aslihanozfidan/anka-slider.svg)
 
 An efficient slider component.
+
+![Screen Shot 2019-08-17 at 01 13 53](https://user-images.githubusercontent.com/18716752/63201174-c1bf3980-c08c-11e9-95a4-244e453c9f94.png)
 
 ## Why should I use it?
 
@@ -22,15 +24,15 @@ import AnkaSlider from 'anka-slider'
 
 const items = [
       {
-        url:
-          'https://images.unsplash.com/photo-1561775330-4d22fde8aeed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80',
-        alt: 'Image1'
+        url: 'path/to/image',
+        alt: 'image description'
       }
     ];
 
 const settings = {
       animation: true,
-      arrows: true
+      arrows: true,
+      dots: true
     }
 
 <AnkaSlider

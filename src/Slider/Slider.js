@@ -103,7 +103,7 @@ export default class Slider extends React.Component {
         )}
         {settings.dots && (
           <ul className='dots-wrapper' style={{ width: `${items.length * 34}px` }}>
-            {items &&
+            {items.length > 0 &&
               items.map((item, index) => (
                 <li key={`slide-item-dot-${index}`} className={activeSlideIndex == index ? 'active-slide' : ''} />
               ))}
