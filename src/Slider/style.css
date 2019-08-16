@@ -48,12 +48,31 @@
 }
 
 .btn-wrapper span.disabled {
-  border-color: grey;
+  border-color:  #8c8c8c;
   cursor: default;
 }
 
 .btn-wrapper span.disabled::before {
-  color: grey;
+  color: #8c8c8c;
+}
+
+.dots-wrapper {
+  margin: 20px auto;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.dots-wrapper li {
+  padding: 7px 7px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color:  #8c8c8c;
+  opacity: .5;
+}
+
+.dots-wrapper li.active-slide {
+  opacity: 1;
 }
 
 .animate {

@@ -38,7 +38,8 @@ export default class SliderContainer extends React.Component {
     ];
     const settings = {
       animation: true,
-      arrows: true
+      arrows: true,
+      dots: true
     }
 
     return (

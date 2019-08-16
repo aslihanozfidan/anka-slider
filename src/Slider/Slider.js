@@ -3,8 +3,9 @@ import Item from './Item';
 
 const defaultSettings = {
   animation: true,
-  arrows: true
-}
+  arrows: true,
+  dots: true
+};
 
 export default class Slider extends React.Component {
   constructor(props) {
@@ -15,7 +16,8 @@ export default class Slider extends React.Component {
 
     this.state = {
       startPoint: null,
-      animate: true
+      animate: true,
+      activeSlideIndex: 0
     };
   }
 
@@ -52,7 +54,8 @@ export default class Slider extends React.Component {
   prev = () => {
     if (this.state.startPoint && this.state.startPoint.hasPrev) {
       this.setState({
-        startPoint: this.state.startPoint.prev
+        startPoint: this.state.startPoint.prev,
+        activeSlideIndex: this.state.activeSlideIndex - 1
       });
 
       this.props.settings.animation && this.animate();
@@ -62,7 +65,8 @@ export default class Slider extends React.Component {
   next = () => {
     if (this.state.startPoint && this.state.startPoint.hasNext) {
       this.setState({
-        startPoint: this.state.startPoint.next
+        startPoint: this.state.startPoint.next,
+        activeSlideIndex: this.state.activeSlideIndex + 1
       });
 
       this.props.settings.animation && this.animate();
@@ -78,8 +82,8 @@ export default class Slider extends React.Component {
   };
 
   render() {
-    const { startPoint, animate } = this.state;
-    const { settings } = this.props;
+    const { startPoint, animate, activeSlideIndex } = this.state;
+    const { settings, items } = this.props;
 
     return (
       <div className='slider-wrapper'>
@@ -96,6 +100,14 @@ export default class Slider extends React.Component {
             <span onClick={(e) => this.prev(e)} className={startPoint && startPoint.hasPrev ? '' : 'disabled'} />
             <span onClick={(e) => this.next(e)} className={startPoint && startPoint.hasNext ? '' : 'disabled'} />
           </div>
+        )}
+        {settings.dots && (
+          <ul className='dots-wrapper' style={{ width: `${items.length * 34}px` }}>
+            {items &&
+              items.map((item, index) => (
+                <li key={`slide-item-dot-${index}`} className={activeSlideIndex == index ? 'active-slide' : ''} />
+              ))}
+          </ul>
         )}
       </div>
     );
