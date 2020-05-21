@@ -1,5 +1,5 @@
 {
-  "name": "anka-slider",
+  "name": "@aslihanozfidan/anka-slider",
   "version": "2.0.0",
   "description": "An efficient slider component.",
   "main": "build/index.js",
@@ -28,6 +28,7 @@
     "component",
     "animation"
   ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "license": "MIT",
   "dependencies": {
     "react": "^16.4.0",
